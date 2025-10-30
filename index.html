@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguaje Natural con Python</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Portada */
+        .portada {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .portada h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .portada-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+        }
+
+        .portada-info p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .portada-info .nombre {
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .portada-info .especialidad {
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+            opacity: 0.9;
+        }
+
+        /* Catálogo */
+        .catalogo {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .catalogo h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Iconos personalizados */
+        .icon-1::before { content: "🔤"; }
+        .icon-2::before { content: "📏"; }
+        .icon-3::before { content: "🔢"; }
+        .icon-4::before { content: "😊"; }
+        .icon-5::before { content: "🔗"; }
+        .icon-6::before { content: "⚙️"; }
+        .icon-7::before { content: "🗣️💬"; }
+        .icon-8::before { content: "📚"; }
+        .icon-8::before { content: "😵‍💫"; }
+        .icon-9::before { content: "📖"; }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .portada {
+                min-height: 80vh;
+            }
+
+            .catalogo {
+                padding: 3rem 1rem;
+            }
+
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Scroll suave */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+     <!-- Portada -->
+    <section class="portada">
+        <h1>Lenguaje Natural con Python</h1>
+        <div class="portada-info">
+            <p>Trabajo realizado por:</p>
+            <p class="nombre">Bárbara Raquel Sánchez Rodríguez</p>
+            <p class="especialidad">Especialidad: Inteligencia Artificial</p>
+            <p class="especialidad">CBTis 144</p>
+        </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="catalogo">
+        <h2>Contenido del Curso</h2>
+        <div class="cards-grid">
+            
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-image icon-1"></div>
+                <div class="card-content">
+                    <div class="card-number">Tema 01</div>
+                    <h3>1. Tokenizar</h3>
+                    <a href="Tokenizar.html">link de prueba</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-image icon-2"></div>
+                <div class="card-content">
+                    <div class="card-number">Tema 02</div>
+                    <h3>2. Longitud de Palabras</h3>
+                    <a href="Longitud.html">link de prueba</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-image icon-3"></div>
+                <div class="card-content">
+                    <div class="card-number">Tema 03</div>
+                    <h3>3. Contar Palabras</h3>
+                    <a href="Contarpalabras.html">link de prueba</a>
+                    
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-image icon-4"></div>
+                <div class="card-content">
+                    <div class="card-number">Tema 04</div>
+                    <h3>4.Análisis de Sentimientos</h3>
+                    <a href="analisis.html">link de prueba</a>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-image icon-5"></div>
+                <div class="card-content">
+                    <div class="card-number">Tema 05</div>
+                    <h3>5. Eliminar Puntuación</h3>
+                    <a href="eliminarpuntuacion.html">link de prueba</a>  
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-image icon-6"></div>
+                <div class="card-content">
+                    <div class="card-number">Tema 06</div>
+                    <h3>6. Preprocesamiento</h3>
+                    <a href="preprocesamiento.html">link de prueba</a>
+                                <!-- Card 7 -->
+            <div class="card">
+                <div class="card-image icon-7"></div>
+                <div class="card-content">
+                    <div class="card-number">Tema 07</div>
+                    <h3>7. Traductor</h3>
+                    <a href="traductor.html">link de prueba</a> 
+                                <!-- Card 8 -->
+            <div class="card">
+                <div class="card-image icon-8"></div>
+                <div class="card-content">
+                    <div class="card-number">Tema 08</div>
+                    <h3>8. Practica_traductor</h3>
+                    <a href="practica_traductor.html">link de prueba</a>
+                                <!-- Card 9 -->
+            <div class="card">
+                <div class="card-image icon-9"></div>
+                <div class="card-content">
+                    <div class="card-number">Tema 09</div>
+                    <h3>9. Libreria Textblob</h3>
+                    <a href="lib_textblob.html">link de prueba</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
