@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traductor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content-wrapper {
+            background: #f5f5f5;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .tema-titulo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tema-titulo h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .tema-titulo p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .section h3 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .code-container {
+            background: #2d3748;
+            border-radius: 10px;
+            padding: 20px;
+            overflow-x: auto;
+            margin-top: 15px;
+        }
+
+        .code-container pre {
+            margin: 0;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .code-container code {
+            display: block;
+        }
+
+        .keyword { color: #ff79c6; }
+        .function { color: #50fa7b; }
+        .string { color: #f1fa8c; }
+        .comment { color: #6272a4; }
+        .number { color: #bd93f9; }
+
+        .glosario-item {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .glosario-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .glosario-item h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .glosario-item p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .parametros {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .parametros strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .parametros code {
+            background: #2d3748;
+            color: #50fa7b;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .tema-titulo h2 {
+                font-size: 1.5em;
+            }
+
+            .section h3 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Realizado por: Barbara Raquel Sanchez Rodriguez</h1>
+            <p>Especialidad de IA del CBTIS 144</p>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="tema-titulo">
+                <h2>TRADUCTOR</h2>
+            </div>
+
+            <div class="section">
+                <h3>📝 Código del Ejemplo</h3>
+                <div class="code-container">
+                    <pre>
+from deep_translator import GoogleTranslator
+
+
+def traducir_frase_con_deep_translator(frase):
+    # La frase a traducir
+    texto_a_traducir = frase
+
+    # Lista de idiomas de destino y sus códigos (ISO-639-1)
+    # Deep-translator usa los códigos ISO 639-1 o los nombres completos
+    idiomas_destino = {
+        "Inglés": "en",
+        "Francés": "fr",
+        "Alemán": "de"
+    }
+
+    print(f"Frase original: {texto_a_traducir}")
+    print("-" * 35)
+
+    # Creamos una única instancia del traductor fuera del bucle
+    # Asumimos que el idioma de origen se detectará automáticamente ('auto')
+    traductor = GoogleTranslator(source='auto')
+
+    # Realiza y muestra las traducciones
+    for nombre_idioma, codigo in idiomas_destino.items():
+        try:
+            # Configuramos el idioma de destino para esta traducción
+            traductor.target = codigo
+
+            # Traduce el texto
+            traduccion = traductor.translate(texto_a_traducir)
+
+            # Imprime el resultado
+            print(f"{nombre_idioma} ({codigo}): {traduccion}")
+
+        except Exception as e:
+            print(f"Error al traducir a {nombre_idioma}: {e}")
+
+
+# --- Ejemplo de uso ---
+frase_ejemplo = "La programación es una habilidad esencial en el mundo moderno."
+traducir_frase_con_deep_translator(frase_ejemplo)
+                    </pre>
+                </div>
+            </div>
+
+            <div class="section">
+                <h3>📚 Glosario de Funciones</p>
+                 "El procesamiento de texto en procesamiento de lenguaje natural (PLN) es 
+    una etapa esencial que transforma datos textuales crudos en un formato 
+    estructurado, limpio y adecuado para que los algoritmos de aprendizaje 
+    automatico puedan analizarlos y procesarlos de manera eficiente.  
+    Este proceso ayuda a reducir ruido, estandarizar el texto y conservar 
+    el significado esencial del lenguaje" </h3>
+
+                <div class="glosario-item">
+                    <h4>auto</h4>
+                    <p>cAsumimos que el idioma de origen se detectará automáticamente ('auto')</p>
+                    <h4>nombre_idioma, codigo in idiomas_destino.items()</h4>
+                    <p>Realiza y muestra las traducciones</p>
+                    <h4>print(f"{nombre_idioma} ({codigo}): {traduccion}")</h4>
+                    <p>Imprime el resultado</p>
+                    <h4>traduccion = traductor.translate(texto_a_traducir)</h4>
+                    <p>Traduce el texto</p>
+                </div>
+
+               
+
+               
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
