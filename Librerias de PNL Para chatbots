@@ -1,14 +1,254 @@
--Chatbots con PLN
+# LIBRERÍAS DE PLN PARA CHATBOTS
 
+"""
+Clasificación completa de librerías para desarrollo de chatbots
+organizadas por categoría con instrucciones de instalación y descripción
+"""
 
--Chatbots con IA
+# ============================================================================
+# 1. CHATBOTS CON PLN (Procesamiento de Lenguaje Natural)
+# ============================================================================
 
+chatbots_pln = {
+    "NLTK": {
+        "instalacion": "pip install nltk",
+        "descripcion": "Natural Language Toolkit - Librería fundamental para procesamiento "
+                      "de texto. Incluye tokenización, stemming, lematización, análisis "
+                      "sintáctico y semántico. Ideal para chatbots basados en reglas."
+    },
+    
+    "spaCy": {
+        "instalacion": "pip install spacy && python -m spacy download es_core_news_sm",
+        "descripcion": "Librería industrial de PLN de alto rendimiento. Ofrece análisis "
+                      "morfológico, reconocimiento de entidades (NER), análisis de dependencias "
+                      "y vectores de palabras. Excelente para chatbots complejos."
+    },
+    
+    "TextBlob": {
+        "instalacion": "pip install textblob",
+        "descripcion": "API simple para tareas de PLN. Proporciona análisis de sentimientos, "
+                      "clasificación, traducción y corrección ortográfica. Ideal para "
+                      "chatbots básicos con análisis de emociones."
+    },
+    
+    "Pattern": {
+        "instalacion": "pip install pattern",
+        "descripcion": "Librería de minería web y PLN. Incluye análisis de sentimientos, "
+                      "conjugación verbal, búsqueda web y APIs de redes sociales. "
+                      "Útil para chatbots con análisis lingüístico avanzado."
+    },
+    
+    "Polyglot": {
+        "instalacion": "pip install polyglot pyicu pycld2 morfessor",
+        "descripcion": "PLN multilingüe con soporte para más de 130 idiomas. Ofrece "
+                      "detección de idioma, tokenización, NER y análisis de sentimientos. "
+                      "Perfecto para chatbots internacionales."
+    }
+}
 
--Chatbots conectados a plataformas(whatsaap, etc.)
+# ============================================================================
+# 2. CHATBOTS CON IA (Inteligencia Artificial y Machine Learning)
+# ============================================================================
 
--Chatbots en paginas web
+chatbots_ia = {
+    "ChatterBot": {
+        "instalacion": "pip install chatterbot chatterbot-corpus",
+        "descripcion": "Framework de chatbot conversacional con aprendizaje automático. "
+                      "Aprende de conversaciones previas y genera respuestas basadas en "
+                      "similitud. Incluye entrenadores predefinidos en varios idiomas."
+    },
+    
+    "Rasa": {
+        "instalacion": "pip install rasa",
+        "descripcion": "Framework open-source líder para chatbots de IA conversacional. "
+                      "Combina NLU (comprensión) y gestión de diálogos. Permite crear "
+                      "asistentes contextuales con ML. Muy potente y personalizable."
+    },
+    
+    "Transformers (Hugging Face)": {
+        "instalacion": "pip install transformers torch",
+        "descripcion": "Librería con modelos pre-entrenados de última generación (BERT, GPT, "
+                      "T5). Permite fine-tuning para chatbots específicos. Ideal para "
+                      "conversaciones avanzadas con comprensión profunda del contexto."
+    },
+    
+    "DialogFlow SDK": {
+        "instalacion": "pip install google-cloud-dialogflow",
+        "descripcion": "SDK oficial de Google DialogFlow. Permite integrar el potente motor "
+                      "de IA conversacional de Google en aplicaciones Python. Incluye NLU, "
+                      "manejo de contexto y análisis de sentimientos."
+    },
+    
+    "Botpress SDK": {
+        "instalacion": "npm install -g botpress (Node.js)",
+        "descripcion": "Plataforma de chatbot con IA generativa. Incluye NLU propio, "
+                      "flujos visuales, analíticas y deployment. Código abierto con "
+                      "capacidades empresariales y múltiples canales."
+    },
+    
+    "DeepPavlov": {
+        "instalacion": "pip install deeppavlov",
+        "descripcion": "Librería open-source para sistemas conversacionales con deep learning. "
+                      "Incluye modelos pre-entrenados para QA, clasificación de intención, "
+                      "NER y generación de respuestas. Basada en TensorFlow y Keras."
+    }
+}
 
+# ============================================================================
+# 3. CHATBOTS CONECTADOS A PLATAFORMAS (WhatsApp, Telegram, etc.)
+# ============================================================================
 
+chatbots_plataformas = {
+    "Twilio": {
+        "instalacion": "pip install twilio",
+        "descripcion": "API para WhatsApp Business, SMS y llamadas. Permite crear chatbots "
+                      "en WhatsApp con verificación oficial. Incluye mensajería multimedia, "
+                      "plantillas y webhooks para interacciones en tiempo real."
+    },
+    
+    "python-telegram-bot": {
+        "instalacion": "pip install python-telegram-bot",
+        "descripcion": "Wrapper completo para Telegram Bot API. Facilita la creación de bots "
+                      "con comandos, teclados inline, manejo de archivos y pagos. "
+                      "Documentación extensa y comunidad activa."
+    },
+    
+    "discord.py": {
+        "instalacion": "pip install discord.py",
+        "descripcion": "Librería para crear bots de Discord. Permite interacciones complejas "
+                      "con servidores, canales de voz/texto, roles y eventos. Ideal para "
+                      "comunidades gaming y técnicas."
+    },
+    
+    "slackclient": {
+        "instalacion": "pip install slack-sdk",
+        "descripcion": "SDK oficial de Slack. Crea bots para espacios de trabajo con "
+                      "mensajería, modales interactivos, bloques UI y slash commands. "
+                      "Perfecto para automatización empresarial."
+    },
+    
+    "fbchat": {
+        "instalacion": "pip install fbchat",
+        "descripcion": "API no oficial para Facebook Messenger. Permite crear bots que "
+                      "envían/reciben mensajes, imágenes y archivos. Útil para proyectos "
+                      "personales (no recomendado para producción oficial)."
+    },
+    
+    "python-whatsapp-bot": {
+        "instalacion": "pip install yowsup",
+        "descripcion": "Librería para conectarse a WhatsApp Web. Permite automatización de "
+                      "mensajes sin API oficial. Útil para proyectos personales, pero "
+                      "puede violar términos de servicio de WhatsApp."
+    },
+    
+    "Microsoft Bot Framework": {
+        "instalacion": "pip install botbuilder-core botbuilder-schema",
+        "descripcion": "SDK de Microsoft para bots multi-plataforma. Se integra con Teams, "
+                      "Skype, Slack, Facebook, y más. Incluye Azure Bot Service para "
+                      "hosting y analíticas empresariales."
+    }
+}
 
--nombrar libreria, que comando neceito para instalarlo
-descripcion
+# ============================================================================
+# 4. CHATBOTS EN PÁGINAS WEB
+# ============================================================================
+
+chatbots_web = {
+    "Flask-SocketIO": {
+        "instalacion": "pip install flask flask-socketio",
+        "descripcion": "Framework para crear chatbots web en tiempo real con WebSockets. "
+                      "Permite comunicación bidireccional instantánea entre cliente y "
+                      "servidor. Ideal para chat widgets embebidos."
+    },
+    
+    "Streamlit": {
+        "instalacion": "pip install streamlit",
+        "descripcion": "Framework para crear interfaces web interactivas rápidamente. "
+                      "Excelente para prototipos de chatbots con UI moderna sin JavaScript. "
+                      "Incluye componentes de chat nativos desde versión 1.13."
+    },
+    
+    "Gradio": {
+        "instalacion": "pip install gradio",
+        "descripcion": "Crea interfaces web para modelos de ML en minutos. Perfecto para "
+                      "demos de chatbots con IA. Genera enlaces compartibles y permite "
+                      "integración en páginas web existentes."
+    },
+    
+    "Django Channels": {
+        "instalacion": "pip install django channels channels-redis",
+        "descripcion": "Extiende Django con capacidades asíncronas y WebSockets. Permite "
+                      "crear chatbots web escalables con Django. Ideal para aplicaciones "
+                      "empresariales con múltiples usuarios simultáneos."
+    },
+    
+    "Botui": {
+        "instalacion": "npm install botui (JavaScript) + backend Python (Flask/FastAPI)",
+        "descripcion": "Framework JavaScript para UI conversacional. Se combina con backend "
+                      "Python para crear chatbots web atractivos. Incluye botones, "
+                      "formularios y animaciones tipo 'escribiendo'."
+    },
+    
+    "Rasa X": {
+        "instalacion": "pip install rasa-x --extra-index-url https://pypi.rasa.com/simple",
+        "descripcion": "Interfaz web para desarrollar, entrenar y desplegar chatbots Rasa. "
+                      "Incluye widget de chat embebible, analíticas y herramientas de "
+                      "anotación. Ideal para equipos colaborativos."
+    },
+    
+    "Chainlit": {
+        "instalacion": "pip install chainlit",
+        "descripcion": "Framework moderno para crear interfaces de chat para aplicaciones "
+                      "LLM (Large Language Models). Diseño limpio, streaming de respuestas "
+                      "y soporte para archivos adjuntos. Perfecto para chatbots con GPT."
+    },
+    
+    "FastAPI + WebSockets": {
+        "instalacion": "pip install fastapi uvicorn websockets",
+        "descripcion": "Framework asíncrono de alto rendimiento con soporte WebSocket nativo. "
+                      "Ideal para APIs de chatbot REST + comunicación en tiempo real. "
+                      "Documentación automática con Swagger UI."
+    }
+}
+
+# ============================================================================
+# EJEMPLO DE USO
+# ============================================================================
+
+def mostrar_libreria(categoria, nombre_libreria):
+    """
+    Función de ejemplo para mostrar información de una librería
+    """
+    categorias = {
+        "pln": chatbots_pln,
+        "ia": chatbots_ia,
+        "plataformas": chatbots_plataformas,
+        "web": chatbots_web
+    }
+    
+    if categoria in categorias and nombre_libreria in categorias[categoria]:
+        lib = categorias[categoria][nombre_libreria]
+        print(f"\n{'='*60}")
+        print(f"LIBRERÍA: {nombre_libreria}")
+        print(f"{'='*60}")
+        print(f"INSTALACIÓN: {lib['instalacion']}")
+        print(f"\nDESCRIPCIÓN:\n{lib['descripcion']}")
+        print(f"{'='*60}\n")
+    else:
+        print("Categoría o librería no encontrada")
+
+# Ejemplo de uso
+if __name__ == "__main__":
+    print("\n🤖 GUÍA COMPLETA DE LIBRERÍAS PARA CHATBOTS 🤖\n")
+    
+    # Mostrar ejemplo
+    mostrar_libreria("ia", "Rasa")
+    mostrar_libreria("plataformas", "python-telegram-bot")
+    
+    # Listar todas las categorías
+    print("\n📚 CATEGORÍAS DISPONIBLES:")
+    print("1. Chatbots con PLN -", len(chatbots_pln), "librerías")
+    print("2. Chatbots con IA -", len(chatbots_ia), "librerías")
+    print("3. Chatbots conectados a plataformas -", len(chatbots_plataformas), "librerías")
+    print("4. Chatbots en páginas web -", len(chatbots_web), "librerías")
+    print(f"\nTOTAL: {len(chatbots_pln) + len(chatbots_ia) + len(chatbots_plataformas) + len(chatbots_web)} librerías catalogadas\n")
