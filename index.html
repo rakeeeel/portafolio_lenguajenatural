@@ -307,8 +307,474 @@
                     <a href="chatlistas.html">link de prueba</a>
                 </div>
             </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Librerías PLN para Chatbots</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content-wrapper {
+            background: #f5f5f5;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .tema-titulo {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .tema-titulo h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .tema-titulo p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .section h3 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .libreria-item {
+            background: #f7fafc;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .libreria-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .libreria-item h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .libreria-item p {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .code-container {
+            background: #2d3748;
+            border-radius: 10px;
+            padding: 15px;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+
+        .code-container pre {
+            margin: 0;
+            color: #e2e8f0;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .uso-section {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .uso-section strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .keyword { color: #ff79c6; }
+        .function { color: #50fa7b; }
+        .string { color: #f1fa8c; }
+        .comment { color: #6272a4; }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .tema-titulo h2 {
+                font-size: 1.5em;
+            }
+
+            .section h3 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Realizado por: Barbara Raquel Sanchez Rodriguez</h1>
+            <p>Especialidad de IA del CBTIS 144</p>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="tema-titulo">
+                <h2>📚 Librerías de PLN para Chatbots</h2>
+                <p>Catálogo completo de herramientas para desarrollo de chatbots inteligentes</p>
+            </div>
+
+            <!-- CHATBOTS CON PLN -->
+            <div class="section">
+                <h3>🧠 Chatbots con PLN (Procesamiento de Lenguaje Natural)</h3>
+
+                <div class="libreria-item">
+                    <h4>NLTK (Natural Language Toolkit)</h4>
+                    <p><strong>Descripción:</strong> Librería completa para procesamiento de lenguaje natural en Python. Incluye herramientas para tokenización, análisis gramatical, clasificación y más.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">import</span> nltk
+<span class="keyword">from</span> nltk.tokenize <span class="keyword">import</span> word_tokenize
+
+<span class="comment"># Tokenizar texto</span>
+texto = <span class="string">"Hola, ¿cómo estás?"</span>
+tokens = <span class="function">word_tokenize</span>(texto)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>spaCy</h4>
+                    <p><strong>Descripción:</strong> Librería moderna y rápida para PLN avanzado. Excelente para análisis de entidades, dependencias sintácticas y vectores de palabras.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">import</span> spacy
+
+<span class="comment"># Cargar modelo en español</span>
+nlp = spacy.<span class="function">load</span>(<span class="string">"es_core_news_sm"</span>)
+doc = <span class="function">nlp</span>(<span class="string">"Quiero reservar un vuelo"</span>)
+
+<span class="keyword">for</span> token <span class="keyword">in</span> doc:
+    <span class="function">print</span>(token.text, token.pos_)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>TextBlob</h4>
+                    <p><strong>Descripción:</strong> Librería simple para procesar datos textuales. Ideal para análisis de sentimientos y traducción básica.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">from</span> textblob <span class="keyword">import</span> TextBlob
+
+<span class="comment"># Análisis de sentimiento</span>
+texto = <span class="function">TextBlob</span>(<span class="string">"Estoy muy feliz hoy"</span>)
+<span class="function">print</span>(texto.sentiment)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHATBOTS CON IA -->
+            <div class="section">
+                <h3>🤖 Chatbots con IA (Inteligencia Artificial)</h3>
+
+                <div class="libreria-item">
+                    <h4>Rasa</h4>
+                    <p><strong>Descripción:</strong> Framework completo para crear chatbots conversacionales con machine learning. Permite entrenar modelos personalizados para entender intenciones y entidades.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">from</span> rasa.nlu.model <span class="keyword">import</span> Interpreter
+
+<span class="comment"># Cargar modelo entrenado</span>
+interpreter = Interpreter.<span class="function">load</span>(<span class="string">"./models/nlu"</span>)
+resultado = interpreter.<span class="function">parse</span>(<span class="string">"Quiero pedir una pizza"</span>)
+<span class="function">print</span>(resultado[<span class="string">'intent'</span>])</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>ChatterBot</h4>
+                    <p><strong>Descripción:</strong> Librería de Python para crear chatbots que aprenden de conversaciones. Usa algoritmos de machine learning para mejorar respuestas.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">from</span> chatterbot <span class="keyword">import</span> ChatBot
+<span class="keyword">from</span> chatterbot.trainers <span class="keyword">import</span> ChatterBotCorpusTrainer
+
+bot = <span class="function">ChatBot</span>(<span class="string">'MiBot'</span>)
+trainer = <span class="function">ChatterBotCorpusTrainer</span>(bot)
+trainer.<span class="function">train</span>(<span class="string">"chatterbot.corpus.spanish"</span>)
+
+respuesta = bot.<span class="function">get_response</span>(<span class="string">"Hola"</span>)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>Transformers (Hugging Face)</h4>
+                    <p><strong>Descripción:</strong> Librería con modelos de IA avanzados como GPT, BERT y otros transformers. Perfecta para chatbots con comprensión contextual profunda.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">from</span> transformers <span class="keyword">import</span> pipeline
+
+<span class="comment"># Crear chatbot conversacional</span>
+chatbot = <span class="function">pipeline</span>(<span class="string">"conversational"</span>)
+respuesta = <span class="function">chatbot</span>(<span class="string">"¿Cuál es tu nombre?"</span>)
+<span class="function">print</span>(respuesta)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>Dialogflow (Google)</h4>
+                    <p><strong>Descripción:</strong> Plataforma de IA de Google para crear interfaces conversacionales. Ofrece reconocimiento de intenciones y entidades preentrenado.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">from</span> google.cloud <span class="keyword">import</span> dialogflow
+
+<span class="comment"># Detectar intención</span>
+session_client = dialogflow.SessionsClient()
+session = session_client.<span class="function">session_path</span>(project_id, session_id)
+text_input = dialogflow.<span class="function">TextInput</span>(text=<span class="string">"Hola"</span>, language_code=<span class="string">"es"</span>)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHATBOTS CONECTADOS A PLATAFORMAS -->
+            <div class="section">
+                <h3>📱 Chatbots Conectados a Plataformas</h3>
+
+                <div class="libreria-item">
+                    <h4>python-telegram-bot</h4>
+                    <p><strong>Descripción:</strong> Wrapper de Python para la API de Telegram Bot. Permite crear bots interactivos en Telegram con facilidad.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">from</span> telegram.ext <span class="keyword">import</span> Updater, CommandHandler
+
+<span class="keyword">def</span> <span class="function">start</span>(update, context):
+    update.message.<span class="function">reply_text</span>(<span class="string">'¡Hola!'</span>)
+
+updater = <span class="function">Updater</span>(<span class="string">"TOKEN"</span>)
+updater.dispatcher.<span class="function">add_handler</span>(<span class="function">CommandHandler</span>(<span class="string">'start'</span>, start))
+updater.<span class="function">start_polling</span>()</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>twilio</h4>
+                    <p><strong>Descripción:</strong> SDK para integrar chatbots con WhatsApp, SMS y otros servicios de mensajería a través de Twilio.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">from</span> twilio.rest <span class="keyword">import</span> Client
+
+<span class="comment"># Enviar mensaje de WhatsApp</span>
+client = <span class="function">Client</span>(account_sid, auth_token)
+mensaje = client.messages.<span class="function">create</span>(
+    body=<span class="string">"Hola desde mi bot"</span>,
+    from_=<span class="string">'whatsapp:+14155238886'</span>,
+    to=<span class="string">'whatsapp:+5215512345678'</span>
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>discord.py</h4>
+                    <p><strong>Descripción:</strong> Librería para crear bots en Discord. Permite interactuar con servidores, canales y usuarios de Discord.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">import</span> discord
+
+client = discord.<span class="function">Client</span>()
+
+<span class="comment">@client.event</span>
+<span class="keyword">async def</span> <span class="function">on_message</span>(message):
+    <span class="keyword">if</span> message.content == <span class="string">'hola'</span>:
+        <span class="keyword">await</span> message.channel.<span class="function">send</span>(<span class="string">'¡Hola!'</span>)
+
+client.<span class="function">run</span>(<span class="string">'TOKEN'</span>)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>fbchat</h4>
+                    <p><strong>Descripción:</strong> Librería no oficial para crear bots en Facebook Messenger. Permite enviar y recibir mensajes automáticamente.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">from</span> fbchat <span class="keyword">import</span> Client, Message
+
+<span class="keyword">class</span> MiBot(Client):
+    <span class="keyword">def</span> <span class="function">onMessage</span>(self, message):
+        self.<span class="function">send</span>(<span class="function">Message</span>(text=<span class="string">"Respuesta automática"</span>))
+
+bot = <span class="function">MiBot</span>(email, password)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHATBOTS EN PÁGINAS WEB -->
+            <div class="section">
+                <h3>🌐 Chatbots en Páginas Web</h3>
+
+                <div class="libreria-item">
+                    <h4>Flask + Flask-SocketIO</h4>
+                    <p><strong>Descripción:</strong> Framework web de Python combinado con WebSockets para crear chatbots en tiempo real integrados en sitios web.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">from</span> flask <span class="keyword">import</span> Flask, render_template
+<span class="keyword">from</span> flask_socketio <span class="keyword">import</span> SocketIO, send
+
+app = <span class="function">Flask</span>(__name__)
+socketio = <span class="function">SocketIO</span>(app)
+
+<span class="comment">@socketio.on('message')</span>
+<span class="keyword">def</span> <span class="function">handle_message</span>(msg):
+    <span class="function">send</span>(<span class="string">"Respuesta del bot: "</span> + msg)
+
+socketio.<span class="function">run</span>(app)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>BotUI (JavaScript)</h4>
+                    <p><strong>Descripción:</strong> Framework de JavaScript para crear interfaces de chatbot en páginas web con diseño atractivo y conversacional.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="comment">// En HTML/JavaScript</span>
+<span class="keyword">var</span> botui = <span class="keyword">new</span> <span class="function">BotUI</span>(<span class="string">'mi-bot'</span>);
+
+botui.message.<span class="function">add</span>({
+  content: <span class="string">'Hola, ¿en qué puedo ayudarte?'</span>
+}).<span class="function">then</span>(<span class="keyword">function</span>() {
+  <span class="keyword">return</span> botui.action.<span class="function">text</span>({ action: { placeholder: <span class="string">'Escribe aquí'</span> }});
+});</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>Rasa X + REST API</h4>
+                    <p><strong>Descripción:</strong> Versión de Rasa con interfaz web y API REST para integrar chatbots inteligentes en cualquier sitio web.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">import</span> requests
+
+<span class="comment"># Enviar mensaje al bot</span>
+url = <span class="string">"http://localhost:5005/webhooks/rest/webhook"</span>
+mensaje = {<span class="string">"sender"</span>: <span class="string">"usuario1"</span>, <span class="string">"message"</span>: <span class="string">"Hola"</span>}
+respuesta = requests.<span class="function">post</span>(url, json=mensaje)
+<span class="function">print</span>(respuesta.json())</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="libreria-item">
+                    <h4>Streamlit</h4>
+                    <p><strong>Descripción:</strong> Framework de Python para crear aplicaciones web interactivas rápidamente, ideal para prototipos de chatbots con interfaz web.</p>
+                    <div class="uso-section">
+                        <strong>Cómo se utiliza:</strong>
+                        <div class="code-container">
+                            <pre><code><span class="keyword">import</span> streamlit <span class="keyword">as</span> st
+
+st.<span class="function">title</span>(<span class="string">"Mi Chatbot"</span>)
+mensaje = st.<span class="function">text_input</span>(<span class="string">"Escribe tu mensaje:"</span>)
+
+<span class="keyword">if</span> mensaje:
+    respuesta = <span class="string">f"Recibido: {mensaje}"</span>
+    st.<span class="function">write</span>(respuesta)</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
         </div>
     </section>
 </body>
 </html>
+
